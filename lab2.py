@@ -34,7 +34,8 @@ def calc_median_temperature(values):
     else:   
         median = values[len(values)//2]
     print("Median temperature is: " + str(median))
-    pass
+    return median
+
 display_main_menu()
 temp_values = get_user_input()
 average = calc_average(temp_values)
