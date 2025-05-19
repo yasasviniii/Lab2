@@ -15,6 +15,7 @@ def calc_average(values):
     for i in values:
         total += i
     average = total / len(values)
+    average = round(average, 3)
     print("Average temperature is: " + str(average))
     return average
 def find_min_max(values):
@@ -29,6 +30,7 @@ def find_min_max(values):
     print("Minimum and maximum temperature is: " + str(minmax))
     return minmax
 def calc_median_temperature(values):
+    values.sort()
     if len(values) % 2 == 0:
         median = (values[len(values)//2] + values[len(values)//2 - 1]) / 2
     else:   
@@ -36,7 +38,9 @@ def calc_median_temperature(values):
     print("Median temperature is: " + str(median))
     return median
 
-display_main_menu()
-temp_values = get_user_input()
-average = calc_average(temp_values)
-minmax = find_min_max(temp_values)
+def main():
+    display_main_menu()
+    temp_values = get_user_input()
+    average = calc_average(temp_values)
+    minmax = find_min_max(temp_values)
+    median = calc_median_temperature(temp_values)
